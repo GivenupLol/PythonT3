@@ -37,4 +37,6 @@ for i in range(start_range, end_range + 1):
     # Check if the current guess matches the generated PIN
     if guess == f"{pin:0{num_digits}d}":
         print(f"PIN found: {pin}")
+        f = open("pin.txt", "w")
+        print(pin, file=f)
         break  # Exit the loop if the correct PIN is found
