@@ -15,11 +15,11 @@ def main():
 Welcome to Adam's Term 3 DIGITECH Assignment
 
 Scripts
-(1) desc
-(2) desc
-(3) desc
-(4) desc
-(5) desc
+(1) Phishing Target
+(2) Password Checker
+(3) Pin Cracker
+(4) Unpatched Server Checker
+(5) Hidden Bank Logs
 
 (0) Exit""")
         choice = int(input("\nPlease select which script to run: "))
