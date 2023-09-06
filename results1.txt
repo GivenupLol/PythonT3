@@ -1,1 +1,1 @@
-user: 'target', old password: 'pass', new password: 'new'
+user: 'target', old password: 'pass', new password: 'newone'

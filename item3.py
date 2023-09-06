@@ -1,17 +1,40 @@
-# DIGITECH Year 9 Term 3 Python Item 3
-
 # Import the 'randint' function from the 'random' module
 from random import randint
 
-# Generate a random 4-digit PIN between 1000 and 9999 (inclusive)
-pin = randint(1000, 10000)  # Note: The upper bound should be 10000 to include 9999
+# Prompt the user for the number of digits in the PIN (between 4 and 16 inclusive)
+while True:
+    try:
+        num_digits = int(input("Enter the number of digits in the PIN (4-16): "))
+        if 4 <= num_digits <= 16:
+            break
+        else:
+            print("Please enter a valid number of digits between 4 and 16.")
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
 
-# Iterate through PIN guesses from 1000 to 9999
-for i in range(1000, 10000):  # Note: The upper bound should be 10000 to include 9999
-    guess = i  # Set the current guess to the loop iteration value
-    print(f"Trying pin: {guess}")
-    
+# Prompt the user for the test range
+while True:
+    try:
+        start_range = int(input("Enter the start of the test range: "))
+        end_range = int(input("Enter the end of the test range: "))
+        if start_range < end_range:
+            break
+        else:
+            print("Invalid range. End range must be greater than start range.")
+    except ValueError:
+        print("Invalid input. Please enter valid numbers.")
+
+# Generate a random PIN with the specified number of digits
+min_pin = 10 ** (num_digits - 1)
+max_pin = (10 ** num_digits) - 1
+pin = randint(min_pin, max_pin)
+
+# Iterate through PIN guesses within the specified range
+for i in range(start_range, end_range + 1):
+    guess = f"{i:0{num_digits}d}"  # Format the current guess as a string with leading zeros
+    print(f"Trying PIN: {guess}")
+
     # Check if the current guess matches the generated PIN
-    if guess == pin:
-        print(f"Pin found: {pin}")
+    if guess == f"{pin:0{num_digits}d}":
+        print(f"PIN found: {pin}")
         break  # Exit the loop if the correct PIN is found
