@@ -361,3 +361,13 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Other files that aren't needed
+.vscode/
+.vs/
+.dist/
+TaskSheet.pdf
+results1.txt
+DIGITECH.pyproj
+DIGITECH.pyproj.user
+DIGITECH.sln
